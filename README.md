@@ -33,21 +33,21 @@ Bamazon is a simulation of an online store. There are two windows for this progr
 
 ![List of options for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Manager%20Options.png)
 
-###View Products for Sale
+### View Products for Sale
 After selecting this option, press **ENTER**.
 
 This option will display a list of the items in Inventory by ID, Name, Price to public and Qty in stock.
 
 ![List of options for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Option1%20view.png)
 
-###View Low Inventory
+### View Low Inventory
 After selecting this option, press **ENTER**.
 
 This option will display a list of the items in Inventory with quantities in stock lower than 5 items.
 
 ![View for low quantity in Inventory for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Low%20Inventory%20View.png)
 
-###Add to Inventory
+### Add to Inventory
 After selecting this option, press **ENTER**.
 
 1. A list of the current inventory items will display on screen.
@@ -60,7 +60,7 @@ After selecting this option, press **ENTER**.
 
 4. Bamazon will display a message if the transaction was succesful.
 
-###Add New Product
+### Add New Product
 After selecting this option, press **ENTER**.
 
 1. Bamazon will prompt four questions:
@@ -70,7 +70,7 @@ After selecting this option, press **ENTER**.
 
     3. **What is the price to the public?** => *Input the price to customers*
 
-    4.**How many items are we adding to stock?** => *Number of items Bamazon has in stock*
+    4. **How many items are we adding to stock?** => *Number of items Bamazon has in stock*
 
 2. Bamazon will add your entry to the database ans assign a new Item ID for each item.
 

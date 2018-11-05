@@ -1,5 +1,4 @@
 # bamazon
-# bamazonCustomer.js
 
 Bamazon is a simulation of an online store. There are two windows for this program:
 * Customer View
@@ -26,3 +25,53 @@ Bamazon is a simulation of an online store. There are two windows for this progr
 6. After the above transactions, Bamazon will ask you if you would like to continue shopping or leave the site.
 
 7. We hope you have a good experience, tahnk you for visiting Bamazon.
+
+## Manager View
+1. On terminal, run the command *node bamazonManager.js*
+
+2. A list of available option will be display:
+
+![List of options for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Manager%20Options.png)
+
+###View Products for Sale
+After selecting this option, press **ENTER**.
+
+This option will display a list of the items in Inventory by ID, Name, Price to public and Qty in stock.
+
+![List of options for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Option1%20view.png)
+
+###View Low Inventory
+After selecting this option, press **ENTER**.
+
+This option will display a list of the items in Inventory with quantities in stock lower than 5 items.
+
+![View for low quantity in Inventory for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Low%20Inventory%20View.png)
+
+###Add to Inventory
+After selecting this option, press **ENTER**.
+
+1. A list of the current inventory items will display on screen.
+
+2. Bamazon will prompt for the **Item ID** of the product you want to update.
+
+![View for low quantity in Inventory for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/Update%20Stock.png)
+
+3. Choose the **Item ID** and input the new quantity to appear on Inventory. Press **ENTER**.
+
+4. Bamazon will display a message if the transaction was succesful.
+
+###Add New Product
+After selecting this option, press **ENTER**.
+
+1. Bamazon will prompt four questions:
+    1. **What is the name of the item you want to add?** => *Input the name of the product*
+    
+    2. **Part of what department is this item?** => *Input the department where the product will be placed*
+
+    3. **What is the price to the public?** => *Input the price to customers*
+
+    4.**How many items are we adding to stock?** => *Number of items Bamazon has in stock*
+
+2. Bamazon will add your entry to the database ans assign a new Item ID for each item.
+
+![New Item for Manager entry](https://github.com/nyramirez/bamazon/blob/master/assets/pictures/New%20Item.png)

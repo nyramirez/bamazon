@@ -39,21 +39,26 @@ function managerView() {
             case "View Products for Sale":
                 // console.log(answers.managerAction);
                 option1();
+                break;
 
             case "View Low Inventory":
                 // console.log(answers.managerAction);
                 option2();
+                break;
 
             case "Add to Inventory":
                 // console.log(answers.managerAction);
                 option3();
+                break;
 
             case "Add New Product":
                 // console.log(answers.managerAction);
                 option4();
+                break;
 
             default:
-                console.log("nada jalo");
+                console.log(answers.managerAction);
+
         }
     });
 
@@ -217,48 +222,50 @@ function option4() {
             message: "How many items are we adding to stock?"
         }
     ]).then(answers => {
-        // console.log(answers.newName);
-        // console.log(answers.newDept);
-        // console.log(answers.newPrice);
-        // console.log(answers.newStockQty);
 
-        connection.query("INSERT INTO products (product_name, department_name, price,stock_quantity) VALUES (?, ?, ?, ?)",
-                [
-                    {
-                        product_name: answers.newName
-                    },
-                    {
-                        department_name: answers.newDept
-                    },
-                    {
-                        price: answers.newPrice
-                    },
-                    {
-                        stock_quantity: answers.newStockQty
-                    }
-                ],
-                function (err) {
-                    if (err) throw err;
-                    console.log("Transaction Finalized");
-                    console.log("")
-                    inquirer.prompt([
-                        {
-                            type: "list",
-                            name: "managerAction",
-                            message: "Do you want to EXIT?",
-                            choices: ["YES", "NO"]
-                        }
-                    ]).then(answers => {
-                        if (answers.managerAction === 'YES') {
-                            console.log("Thank you for working with us");
-                            console.log("Bamazon.com");
-                            connection.end();
-                        } else {
-                            console.log("You are ONLINE");
-                            managerView();
-                        }
-                    });
-                });
+        let newItemName = answers.newName;
+        let newItemDPT = answers.newDept;
+        let newItemPrice = Number(answers.newPrice);
+        let newItemQty = Number(answers.newStockQty);
 
-    });
+        // console.log(typeof(newItemName));
+        console.log(newItemName);
+        // console.log(typeof(newItemDPT));
+        console.log(newItemDPT);
+        // console.log(typeof(newItemPrice));
+        console.log(newItemPrice);
+        // console.log(typeof(newItemQty));
+        console.log(newItemQty);
+
+        const newProduct = {
+            product_name: newItemName,
+            department_name: newItemDPT,
+            price: newItemPrice,
+            stock_quantity: newItemQty
+        };
+
+        connection.query("INSERT INTO products SET ?", newProduct, function (err) {
+            if (err) throw err;
+            console.log("Transaction Finalized");
+            console.log("")
+            inquirer.prompt([
+                {
+                    type: "list",
+                    name: "managerAction",
+                    message: "Do you want to EXIT?",
+                    choices: ["YES", "NO"]
+                }
+            ]).then(answers => {
+                if (answers.managerAction === 'YES') {
+                    console.log("Thank you for working with us");
+                    console.log("Bamazon.com");
+                    connection.end();
+                } else {
+                    console.log("You are ONLINE");
+                    managerView();
+                }
+            });
+        });
+    }
+    )
 }

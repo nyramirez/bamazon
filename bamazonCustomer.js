@@ -110,7 +110,26 @@ function buyItem() {
                 console.log("or contact customer service for wholesale pricing and ordering.");
                 console.log("Thank you from Bamazon ;P");
                 console.log("");
-                // customerView();
+                inquirer.prompt([
+                    {
+                        type: "list",
+                        name: "userAction",
+                        message: "Do you want to continue purchasing products?",
+                        choices: ["YES", "NO"]
+                    }
+                ]).then(answers => {
+                    // console.log(typeof(answers.userAction));
+                    // console.log(answers.userAction);
+                    // console.log(answers);
+                    if (answers.userAction === 'NO') {
+                            console.log("Thank you for visiting");
+                            console.log("Bamazon.com");
+                            connection.end();
+                    } else {
+                        console.log("You are ONLINE");
+                        customerView();
+                    }
+                });
 
             }
             else {
